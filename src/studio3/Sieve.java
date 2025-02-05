@@ -9,12 +9,6 @@ public class Sieve {
 		System.out.println("n: ");
 		int n = in.nextInt();
 		
-//		int[] numbers = new int[n-1];
-//		
-//		for (int i=0; i <= numbers.length-2; i++) {
-//			numbers[i] = i+2;
-//		}
-		
 		int y;
 		
 		boolean[] check = new boolean[n-1];
@@ -25,7 +19,6 @@ public class Sieve {
 			
 			if (x*x <= n) {
 				check[x*x-2] = true;
-
 			}
 			
 			while (((x*x) + (x*y)) <= n) {
@@ -35,8 +28,12 @@ public class Sieve {
 			
 		}
 		
-		for (boolean i : check) {
-			System.out.println(i);
+		for (int i = 0; i < check.length; i++) {
+			
+			if (check[i] == false) {
+				System.out.println(i+2);
+			}
+			
 		}
 		
 
